@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Smartosc_Article::article" title="Article" module="Smartosc_Article" sortOrder="52" resource="Smartosc_Article::article"/>
+        <add id="Smartosc_Article::article_configuration" title="Configuration" module="Smartosc_Article" sortOrder="99" parent="Smartosc_Article::article"
+             action="adminhtml/system_config/edit/section/article" resource="Smartosc_Article::article_configuration"/>
+        <add id="Smartosc_Article::display" title="Manage Articles" module="Smartosc_Article" sortOrder="10"
+             action="smartosc_article/index/display" resource="Smartosc_Article::display" parent="Smartosc_Article::article"/>
+    </menu>
+</config>

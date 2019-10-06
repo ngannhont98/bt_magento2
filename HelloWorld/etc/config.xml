@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <helloworld>
+            <configuration_helloworld>
+                <enable_helloworld>1</enable_helloworld>
+                <display_text>Hello World</display_text>
+            </configuration_helloworld>
+        </helloworld>
+    </default>
+<!--    <default>-->
+<!--        <smartosc_configuration>-->
+<!--            <configuration>-->
+<!--                <enable>0</enable>-->
+<!--            </configuration>-->
+<!--        </smartosc_configuration>-->
+<!--    </default>-->
+</config>

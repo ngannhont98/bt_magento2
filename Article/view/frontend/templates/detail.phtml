@@ -1,0 +1,76 @@
+
+<?php
+/**
+* @var Smartosc\Article\Block\Detail $block
+*/
+
+?>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .article-id {
+        width: 3%
+    }
+
+    .article-title {
+        width: 15%
+    }
+
+    .article-content {
+        width: 25%
+    }
+
+    .article-image {
+        width: 20%
+    }
+
+    .article-create {
+        width: 10%
+    }
+
+    .article-update {
+        width: 10%
+    }
+    .article-action{
+        width: 17%;
+    }
+
+</style>
+<body>
+<table>
+    <tr>
+        <th class="article-id">Id</th>
+        <th class="article-title">Title</th>
+        <th class="article-content">Content</th>
+        <th class="article-image">Image</th>
+        <th class="article-create">Create At</th>
+        <th class="article-update">Update At</th>
+    </tr>
+    <?php
+    $detail = ($block->getArticleDetailById())[0]; ?>
+        <tr>
+            <td><?php echo $detail['article_id'] ?></td>
+            <td><?php echo $detail['title'] ?></td>
+            <td><?php echo  $detail['content'] ?></td>
+            <td><?php echo $detail['image'] ?></td>
+            <td><?php echo $detail['created_at'] ?></td>
+            <td><?php echo $detail['updated_at'] ?></td>
+        </tr>
+</table>
+</body>

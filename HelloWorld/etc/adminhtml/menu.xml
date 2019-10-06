@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Smartosc_HelloWorld::helloworld" title="Hello World" module="Smartosc_HelloWorld" sortOrder="51" resource="Smartosc_HelloWorld::helloworld"/>
+        <add id="Smartosc_HelloWorld::hello_configuration" title="Configuration" module="Smartosc_HelloWorld" sortOrder="99" parent="Smartosc_HelloWorld::helloworld"
+             action="adminhtml/system_config/edit/section/helloworld" resource="Smartosc_HelloWorld::helloworld_configuration"/>
+        <add id="Smartosc_HelloWorld::post" title="Manage Posts" module="Smartosc_HelloWorld" sortOrder="10"
+             action="smartosc_helloworld/post" resource="Smartosc_HelloWorld::post" parent="Smartosc_HelloWorld::helloworld"/>
+    </menu>
+</config>

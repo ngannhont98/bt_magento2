@@ -1,0 +1,21 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Smartosc\Article\Controller\Index\Example">
+        <plugin name="Smartosc_Article_Plugin" type="Smartosc\Article\Plugin\ExamplePlugin" sortOrder="10" disabled="false"  />
+    </type>
+    <type name="Smartosc\Article\Block\Detail">
+        <plugin name="Smartosc_Article_Detail_Plugin" type="Smartosc\Article\Plugin\DetailPlugin" sortOrder="11" />
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="smartosc_article_listing_data_source" xsi:type="string">Smartosc\Article\Model\ResourceModel\Article\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Smartosc\Article\Model\ResourceModel\Article\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">smartosc_article</argument>
+            <argument name="resourceModel" xsi:type="string">Smartosc\Article\Model\ResourceModel\Article</argument>
+        </arguments>
+    </virtualType>
+</config>

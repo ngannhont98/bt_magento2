@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <article>
+            <configuration_article>
+                <enable_article>1</enable_article>
+                <custom_limit_page>1</custom_limit_page>
+            </configuration_article>
+        </article>
+    </default>
+</config>

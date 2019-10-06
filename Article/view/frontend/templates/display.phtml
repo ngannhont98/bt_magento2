@@ -1,0 +1,114 @@
+<?php
+/**
+ * @var Smartosc\Article\Block\Display $block
+ */
+
+$base_url = $this->getBaseUrl();
+?>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .article-id {
+        width: 3%
+    }
+
+    .article-title {
+        width: 15%
+    }
+
+    .article-content {
+        width: 25%
+    }
+
+    .article-image {
+        width: 20%
+    }
+
+    .article-create {
+        width: 10%
+    }
+
+    .article-update {
+        width: 10%
+    }
+    .article-action{
+        width: 17%;
+    }
+</style>
+<body>
+<?php if ($block->isEnable()) : ?>
+<table>
+    <tr>
+        <th class="article-id">Id</th>
+        <th class="article-title">Title</th>
+        <th class="article-content">Content</th>
+        <th class="article-image">Image</th>
+        <th class="article-create">Create At</th>
+        <th class="article-update">Update At</th>
+        <th class="article-action">Action</th>
+    </tr>
+    <?php
+    foreach ($block->pagning() as $article) {
+        ?>
+        <tr>
+            <td><?= $article['article_id'] ?></td>
+            <td><a href="<?=$base_url?>article/index/detailarticle?id=<?= $article['article_id'] ?>"><?= $article['title'] ?></a></td>
+            <td><?= $article['content'] ?></td>
+            <td><?= $article['image'] ?></td>
+            <td><?= $article['created_at'] ?></td>
+            <td><?= $article['updated_at'] ?></td>
+            <td>
+                <input type="submit" href="" name="btn_delete" value="Delete" >
+                <input type="submit" href="" name="btn_edit" value="Edit">
+            </td>
+        </tr>
+    <?php
+    } ?>
+</table>
+
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th class="article-id">Id</th>-->
+<!--        <th class="article-title">Title</th>-->
+<!--        <th class="article-content">Content</th>-->
+<!--        <th class="article-image">Image</th>-->
+<!--        <th class="article-create">Create At</th>-->
+<!--        <th class="article-update">Update At</th>-->
+<!--    </tr>-->
+<!--    --><?php
+//    if (isset($_GET['id'])) {
+//        $data = $block->getArticleDetail($_GET['id']);
+//        $detail = $data[0];
+//?>
+<!--        <tr>-->
+<!--            <td>--><?//= $detail['article_id'] ?><!--</td>-->
+<!--            <td>--><?//= $detail['title'] ?><!--</td>-->
+<!--            <td>--><?//= $detail['content'] ?><!--</td>-->
+<!--            <td>--><?//= $detail['image'] ?><!--</td>-->
+<!--            <td>--><?//= $detail['created_at'] ?><!--</td>-->
+<!--            <td>--><?//= $detail['updated_at'] ?><!--</td>-->
+<!--        </tr>-->
+<!--    --><?php //}?>
+<!--</table>-->
+<?php endif ?>
+</body>
