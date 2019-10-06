@@ -8,7 +8,7 @@ TO DO LIST:
 -Create Admin Grid by using Component to show articles listing in backend
 
 ADDITION: HelloWorld Module:
--Create Api and Observer to test demo
+-Create Api and Observer to test demo.
 
 URL OF ARTICLE MODULE:
 Display All Articles: ../article/index/displayarticle
