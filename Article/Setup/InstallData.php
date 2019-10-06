@@ -5,7 +5,6 @@ use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 
-
 class InstallData implements InstallDataInterface
 {
     protected $articleFactory;
@@ -16,13 +15,14 @@ class InstallData implements InstallDataInterface
     }
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $data = [
-            'title'      => "How to Create SQL Setup Script in Magento 2",
-            'content'    => "In this article, we will find out how to install and upgrade sql script for module in Magento 2. When you install or upgrade a module, you may need to change the database structure or add some new data for current table. To do this, Magento 2 provide you some classes which you can do all of them.",
-            'image'      => '/magento-2-module-development/magento-2-how-to-create-sql-setup-script.html',
-        ];
-        $article = $this->articleFactory->create();
-        $article->addData($data)->save();
+        for ($i=1; $i<=10; $i++) {
+            $data = [
+                'title'      => "Title " . $i,
+                'content'    => "Here is content " . $i,
+                'image'      => 'image ' . $i,
+            ];
+            $article = $this->articleFactory->create();
+            $article->addData($data)->save();
+        }
     }
-
 }
