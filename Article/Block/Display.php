@@ -30,8 +30,9 @@ class Display extends \Magento\Framework\View\Element\Template
     public function pagning()
     {
         $pagesize = $this->helper->getGeneralConfig('custom_limit_page');
+
         $page = ($this->getRequest()->getParam('p')) ? $this->getRequest()->getParam('p') : 1;
-        $limit = ($this->getRequest()->getParam('limit')) ? ($this->getRequest()->getParam('limit')) : 5;
+        $limit = ($this->getRequest()->getParam('limit')) ? ($this->getRequest()->getParam('limit')) : $pagesize;
 
         $collection = $this->articleFactory->create();
         $collection->setPageSize($limit);

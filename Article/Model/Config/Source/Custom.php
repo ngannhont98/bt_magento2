@@ -15,4 +15,10 @@ class Custom implements \Magento\Framework\Option\ArrayInterface
             ['value' => 10, 'label' => __('10')]
         ];
     }
+
+    public function toArray()
+    {
+        return [1 => __('1'), 5 => __('5'), 10 => __('10')];
+    }
+
 }
